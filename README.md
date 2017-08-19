@@ -9,6 +9,6 @@
 # Ansible構築　手順
 `1.yum -y install ansible`  
 `2.cd /etc/ansible`  
-`3.git clone https://github.com/yukiafronia/school-festival-SSH-Key.git`  
-`4.wordpress-nginx_rhel7内のhosts内容を変更する。変更内容はIPアドレス`   
+`3.git clone https://github.com/yukiafronia/school-festival-SSH-Key.git`  
+`4.wordpress-nginx_rhel7内のhosts内容を変更する。変更内容はIPアドレス`  
 `5.ansible-playbook -i hosts -u root --ask-pass site.yml`  
