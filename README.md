@@ -1,6 +1,8 @@
 # school-festival
 文教大学　学祭　null2x Web制作
 
+仮想マシンはvirtualbox VMware Hyper-Vお好きなものをお使いください。  
+
 # CentOS7.3 install手順
 `http://ftp.jaist.ac.jp/pub/Linux/CentOS/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso`  
 `https://www.server-world.info/query?os=CentOS_7&p=install`  
