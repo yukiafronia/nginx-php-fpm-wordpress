@@ -7,7 +7,7 @@
     - php-enchant
     - php-IDNA_Convert
     - php-mbstring
-    - php-mysql
+    - php-mysqlnd
     - php-PHPMailer
     - php-process
     - php-simplepie
