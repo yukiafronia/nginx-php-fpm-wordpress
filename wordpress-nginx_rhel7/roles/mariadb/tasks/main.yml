@@ -4,7 +4,7 @@
 - name: Install MariaDB package
   yum: name={{ item }} state=latest
   with_items:
-   - mariadb-server
+   - MariaDB-server
    - MySQL-python
    - libselinux-python
    - libsemanage-python
