@@ -5,8 +5,8 @@
 - name: Copy the EPEL repository definition
   copy: src=epel.repo dest=/etc/yum.repos.d/
 
-- name: Copy the remi-php72 repository definition
-  copy: src=remi-php72.repo dest=/etc/yum.repos.d/
+- name: Copy the remi-php73 repository definition
+  copy: src=remi-php73.repo dest=/etc/yum.repos.d/
 
 - name: Copy the Mariadb repository definition
   copy: src=Mariadb.repo dest=/etc/yum.repos.d/
