@@ -88,3 +88,10 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/** wordpress へのアップロード容量 */
+@ini_set( 'upload_max_filesize' , '10G' );
+@ini_set( 'post_max_size', '10G');
+@ini_set( 'memory_limit', '512M' );
+@ini_set( 'max_execution_time', '300' );
+@ini_set( 'max_input_time', '300' );
