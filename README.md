@@ -4,7 +4,7 @@
 仮想マシンはvirtualbox VMware Hyper-Vお好きなものをお使いください。  
 
 # CentOS8.0 install手順
-`http://ftp.jaist.ac.jp/pub/Linux/CentOS/8.0.1909/isos/x86_64/CentOS-8-x86_64-DVD-1909.iso`  
+`http://ftp.jaist.ac.jp/pub/Linux/CentOS/8/isos/x86_64/CentOS-8-x86_64-DVD-1909.iso`  
 `https://www.server-world.info/query?os=CentOS_8&p=install`  
 `上記サイトを参考に、インストールを願います。GUIが良い方はソフトウェアの選択でGUIを選んでください`  
 
