@@ -8,6 +8,7 @@ echo "# 製作者 : Yuki Hiramastsu"
 echo "# Ver 0.0.1 at 2019 09 25"
 echo ""
 sleep 4
+dnf -y update
 # null2x web Server Scriptに統合の為SELinux , firewalldのdisabled設定は無効化
 << COMMENTOUT
 echo "---------------------------------------------------------------------------------------------------------------------------"
@@ -63,11 +64,14 @@ else
     echo "Great stuff! No updates pending..."
 fi
 
-echo "# kernel-tools-libs 切り替え"
-dnf --enablerepo=elrepo-kernel -y swap \kernel-tools-libs -- \kernel-ml-tools-libs
+echo "既存インストールされているkernel-tools 4.18 , kernel-tools-libs 4.18を削除"
+dnf -y remove kernel-tools
 
 echo "# kernel-ml-tools 新規インストール"
 dnf --enablerepo=elrepo-kernel -y install kernel-ml-tools
+
+echo "# kernel-tools-libs 切り替え"
+dnf --enablerepo=elrepo-kernel -y swap \kernel-tools-libs -- \kernel-ml-tools-libs
 
 echo "利用したいカーネルを設定"
 grub2-set-default 0
