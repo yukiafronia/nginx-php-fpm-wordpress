@@ -30,7 +30,8 @@
   copy: src=startup.sh dest=/root
   file: path=/root/startup.sh
         mode:0777
-  - shell: Kernel Update Script
+
+- shell: Kernel Update Script
   args:
     chdir: /root
     removes: /root/startup.sh
