@@ -9,9 +9,9 @@
 `上記サイトを参考に、インストールを願います。GUIが良い方はソフトウェアの選択でGUIを選んでください`  
 
 # Ansible構築　手順
-`1.dnf -y install ansible`  
-`2.cd /etc/ansible`  
-`3.git clone https://github.com/yukiafronia/school-festival-SSH-Key.git`  
-`4.wordpress-nginx_rhel7内のhosts内容を変更する。変更内容はIPアドレス`  
-`5.cd /etc/ansible/wordpress-nginx_rhel8`  
+`1.pip3 install ansible`  
+`2.cd /root`  
+`3.git clone https://github.com/yukiafronia/nginx-php-fpm-wordpress.git`  
+`4.wordpress-nginx_rhel8内のhosts内容を変更する。変更内容はIPアドレス`  
+`5.cd /root/ansible/nginx-php-fpm-wordpress/wordpress-nginx_rhel8`  
 `6.ansible-playbook -i hosts -u root --ask-pass site.yml`  
