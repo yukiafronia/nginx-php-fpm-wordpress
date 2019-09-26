@@ -2,7 +2,7 @@
 - name: Install php-fpm and deps
   dnf: name={{ item }} state=latest
   with_items:
-    - php74
+    - php74-php
     - php74-php-fpm
     - php74-php-enchant
     # - php-IDNA_Convert 2014年にて開発終了のためコメントアウト
