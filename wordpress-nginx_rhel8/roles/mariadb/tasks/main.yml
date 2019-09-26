@@ -1,6 +1,5 @@
 ---
 # This playbook will install MariaDB and create db user and give permissions.
-
 - name: Install MariaDB package
   dnf: name=MariaDB-server state=latest
   disablerepo: AppStream #MariaDB-server 10.4 をmariadb repoからインストールするため
