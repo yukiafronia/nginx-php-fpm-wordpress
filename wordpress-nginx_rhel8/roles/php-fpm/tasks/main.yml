@@ -2,17 +2,17 @@
 - name: Install php-fpm and deps
   dnf: name={{ item }} state=latest
   with_items:
-    - php
-    - php-fpm
-    - php-enchant
-    - php-IDNA_Convert
-    - php-mbstring
-    - php-mysqlnd
-    - php-PHPMailer
-    - php-process
-    - php-simplepie
-    - php-xml
-    - php-gd
+    - php74
+    - php74-php-fpm
+    - php74-php-enchant
+    # - php-IDNA_Convert 2014年にて開発終了のためコメントアウト
+    - php74-php-mbstring
+    - php74-php-mysqlnd
+    # - php-PHPMailer remi-php74 から外されたためコメントアウト
+    - php74-php-process
+    # - php-simplepie remi-php74 から外されたためコメントアウト
+    - php74-php-xml
+    - php74-php-gd
 
 - name: Disable default pool
   command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
