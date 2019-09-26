@@ -1,14 +1,14 @@
 ---
 # This playbook will install MariaDB and create db user and give permissions.
 - name: Install MariaDB package
-  dnf: name=MariaDB-server state=latest disablerepo=AppStream 
-#MariaDB-server 10.4 をmariadb repoからインストールするため
-
   dnf: name={{ item }} state=latest
   with_items:
    - python3-PyMySQL #MySQL-python (python3系対応の為ドライバ変更)
    - python3-libselinux #libselinux-pythonの後継
    - python3-libsemanage #libsemanage-pythonの後継
+
+  dnf: name=MariaDB-server state=latest disablerepo=AppStream 
+#MariaDB-server 10.4 をmariadb repoからインストールするため
 
 - name: Configure SELinux to start mysql on any port
   seboolean: name=mysql_connect_any state=true persistent=yes
