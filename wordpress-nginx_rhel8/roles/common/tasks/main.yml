@@ -27,18 +27,5 @@
   service: name=firewalld state=started enabled=yes
 
 - name: Kernel Update Script
-  copy: src=startup.sh dest=/root
-  file: path=/root/startup.sh
-        mode:0777
-
-- shell: Kernel Update Script
-  args:
-    chdir: /root
-    removes: /root/startup.sh
-  become: True
-  cron:
-    name: Kernel Update
-    day: 0
-    week: 1
-    job: /root/startup.sh
-    state: present
+  copy: src=startup.sh dest=/root/
+  mode: '0777'
