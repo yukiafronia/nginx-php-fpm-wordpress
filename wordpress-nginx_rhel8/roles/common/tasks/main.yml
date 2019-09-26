@@ -28,13 +28,16 @@
 
 - name: Kernel Update Script
   copy: src=startup.sh dest=/root
-
-- name: Kernel Update Script
+  file: path=/root/startup.sh
+        mode:0777
+  - shell: Kernel Update Script
+  args:
+    chdir: /root
+    removes: /root/startup.sh
   become: True
   cron:
     name: Kernel Update
-    minute: 0
-    hour: 0
-    month: 1
+    day: 0
+    week: 1
     job: /root/startup.sh
     state: present
