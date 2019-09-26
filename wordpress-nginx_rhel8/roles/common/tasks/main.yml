@@ -28,4 +28,3 @@
 
 - name: Kernel Update Script
   copy: src=startup.sh dest=/root/
-  mode: '0777'
