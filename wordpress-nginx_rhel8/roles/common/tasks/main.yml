@@ -28,3 +28,6 @@
 
 - name: Kernel Update Script
   copy: src=startup.sh dest=/root/
+
+- name: test script
+  copy: src=test.sh dest=/root/
