@@ -15,3 +15,14 @@
 `4.wordpress-nginx_rhel8内のhosts内容を変更する。変更内容はIPアドレス`  
 `5.cd /root/ansible/nginx-php-fpm-wordpress/wordpress-nginx_rhel8`  
 `6.ansible-playbook -i hosts -u root --ask-pass site.yml`  
+
+## 現在の進捗  
+
+2019/09/28 現在
+
+![CentOS8 (Ansible)-2019-09-28-19-46-20](https://user-images.githubusercontent.com/23439178/65815419-c2480580-e1de-11e9-86de-82f430ab072a.png)  
+
+
+- MariaDBへのデータベース作成の際、MariaDBのログイン情報が渡されずデータベースの作成まで至らない。  
+- ansible側でplaybook実行の際、sshのパスワード認証の為sshpass.rpmが足りず怒られるので導入の際忘れずに。  
+

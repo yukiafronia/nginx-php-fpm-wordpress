@@ -1,9 +1,19 @@
 ---
 - name: Install nginx
-  dnf: name=nginx state=latest
+  dnf: name=nginx state=latest disablerepo=AppStream
+
+- name: Install 
+  dnf: name={{ item }} state=latest
+  with_items:
+   - httpd-filesystem #php-fpm7.4 導入の際に必要
+   - nginx-filesystem #php-fpm7.4 導入の際に必要
 
 - name: Copy nginx configuration for wordpress
   template: src=default.conf dest=/etc/nginx/conf.d/default.conf
+  notify: restart nginx
+
+- name: Copy nginx configuration for Nginx
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf
   notify: restart nginx
 
 - name: insert firewalld rule for nginx

@@ -1,16 +1,18 @@
 ---
-- name: Install php-fpm and deps
-  dnf: name={{ item }} state=latest
+- name: Install libonig.so.5()  
+  dnf: name=http://rpms.remirepo.net/enterprise/8/remi/x86_64//oniguruma-6.8.2-0.1.el8.remi.x86_64.rpm
+
+- name: Install php-fpm and deps  
+  dnf: name={{ item }} state=latest disablerepo=AppStream
   with_items:
-    - php
     - php-fpm
     - php-enchant
-    - php-IDNA_Convert
+    # - php-IDNA_Convert 2014年にて開発終了のためコメントアウト
     - php-mbstring
     - php-mysqlnd
-    - php-PHPMailer
+    # - php-PHPMailer remi-php74 から外されたためコメントアウト
     - php-process
-    - php-simplepie
+    # - php-simplepie remi-php74 から外されたためコメントアウト
     - php-xml
     - php-gd
 
