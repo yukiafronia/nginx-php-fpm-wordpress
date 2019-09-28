@@ -1,4 +1,7 @@
 ---
+- name: Install libonig.so.5()  
+  dnf: name=http://rpms.remirepo.net/enterprise/8/remi/x86_64//oniguruma-6.8.2-0.1.el8.remi.x86_64.rpm
+
 - name: Install php-fpm and deps  
   dnf: name={{ item }} state=latest disablerepo=AppStream
   with_items:
