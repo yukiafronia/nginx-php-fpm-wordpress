@@ -18,7 +18,7 @@
 
 # Ansible構築　手順
 `1.yum -y install ansible`  
-`2.cd /root/  
+`2.cd /root/`  
 `3.git clone https://github.com/yukiafronia/nginx-php-fpm-wordpress.git`  
 
 `4.wordpress-nginx_rhel7内のhosts内容を変更する。変更内容はIPアドレス`
