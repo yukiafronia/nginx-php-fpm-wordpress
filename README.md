@@ -1,10 +1,10 @@
-# school-festival
-文教大学　学祭　null2x Web制作
+# nginx+php-fpm+wordpress with CentOS7.7
+文教大学　null2x ベースwebサーバー スクリプト
 
-仮想マシンはvirtualbox VMware Hyper-Vお好きなものをお使いください。  
+仮想マシンはvirtualbox VMware Hyper-Vお好きなものをお使いください。
 
-# CentOS7.3 install手順
-`http://ftp.jaist.ac.jp/pub/Linux/CentOS/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso`  
+# CentOS7.7 install手順
+`http://ftp.jaist.ac.jp/pub/Linux/CentOS/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso`  
 `https://www.server-world.info/query?os=CentOS_7&p=install`  
 `上記サイトを参考に、インストールを願います。GUIが良い方はソフトウェアの選択でGUIを選んでください`  
 
