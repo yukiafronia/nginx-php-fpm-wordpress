@@ -21,3 +21,13 @@
 - name: Copy php-fpm configuration
   template: src=wordpress.conf dest=/etc/php-fpm.d/
   notify: restart php-fpm
+
+- name: Copy PHP7.4 configuration for wordpress 1
+  command: sed -i -e "402 s/128M/1G/g" /etc/php.ini
+
+- name: Copy PHP7.4 configuration for wordpress 2
+  command: sed -i -e "687 s/8M/10G/g" /etc/php.ini
+
+- name: Copy PHP7.4 configuration for wordpress 3
+  command: sed -i -e "839 s/2M/10G/g" /etc/php.ini
+  notify: restart php-fpm
