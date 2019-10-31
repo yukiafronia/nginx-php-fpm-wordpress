@@ -28,6 +28,8 @@
 2019/11/02 現在  
 MariaDB における create database とデータベースのアクセスユーザ、パスワード設定をcommand module利用によりワンライナーで完結させることに成功  
 
+![ansible(CentOS8 wordpress)](https://user-images.githubusercontent.com/23439178/67970060-40defb00-fc02-11e9-8803-502c667ef1d2.gif)
+
 解決策  
 mysql -u root -e SQL文 の構文がコマンドで通るはずだったのだが、文法が間違っていたため今まで実装することが出来なかった。  
 Ansibleでのmoduleでデータベースを作る方法は依然として資格情報が渡されないため、冪等性を確保できなくなってしまっているがcommand module でコマンド実施済みかどうかを判定出来るようにしていきたい（あくまで理想です 笑)  
