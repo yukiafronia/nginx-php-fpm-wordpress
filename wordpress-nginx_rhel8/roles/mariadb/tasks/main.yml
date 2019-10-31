@@ -31,6 +31,12 @@
 - name: Start MariaDB Service
   service: name=mariadb state=started enabled=yes
 
+- name: Create Mariadb database
+  command: mysql -u root -e "create database wordpress";
+
+- name: Wordpress DB create user and password
+  command: mysql -u root -e "grant all privileges on wordpress.* to wordpress@localhost identified by 'secret'";
+
 - name: insert firewalld rule
   firewalld: port={{ mysql_port }}/tcp permanent=true state=enabled immediate=yes
   ignore_errors: yes
