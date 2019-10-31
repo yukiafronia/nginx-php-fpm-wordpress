@@ -30,7 +30,7 @@
   file: path=/srv/wordpress/ owner=wordpress group=wordpress state=directory recurse=yes
 
 - name: install SEManage
-  yum: pkg=policycoreutils-python state=present
+  yum: pkg=policycoreutils-python-utils state=present
 
 - name: set the SELinux policy for the Wordpress directory
   command: semanage fcontext -a -t httpd_sys_content_t "/srv/wordpress(/.*)?"
