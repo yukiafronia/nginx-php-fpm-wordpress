@@ -1,7 +1,8 @@
-# MariaDB 10.4 CentOS repository list - created 2018-04-24 00:30 UTC
+# MariaDB 10.5 CentOS repository list - created 2020-07-04 13:19 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
 [mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/10.4/centos8-amd64
+baseurl = http://yum.mariadb.org/10.5/centos8-amd64
+module_hotfixes=1
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
