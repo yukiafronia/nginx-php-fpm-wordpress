@@ -81,3 +81,6 @@ MariaDB 10.4 -> 10.5 へのリポジトリアップデート
 Wordpress 5.4.2 へのアップデート  
 READMEの記述内容変更  
 
+MariaDB credential error 発生  
+
+![image](https://user-images.githubusercontent.com/23439178/86516610-072f5580-be5d-11ea-9165-027c29ec2456.png)
