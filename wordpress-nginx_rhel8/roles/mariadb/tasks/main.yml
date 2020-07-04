@@ -1,7 +1,7 @@
 ---
 # Galera-4 with CentOS8 package  
 - name: MariaDB Galera-4 package
-  command: dnf -y install http://archive.mariadb.org/mariadb-10.5.4/yum/centos/8/x86_64/rpms/galera-4-26.4.5-1.el8.x86_64.rpm
+  dnf: name=http://archive.mariadb.org/mariadb-10.5.4/yum/centos/8/x86_64/rpms/galera-4-26.4.5-1.el8.x86_64.rpm
   
 # This playbook will install MariaDB and create db user and give permissions.
 - name: Install MariaDB-lib package
