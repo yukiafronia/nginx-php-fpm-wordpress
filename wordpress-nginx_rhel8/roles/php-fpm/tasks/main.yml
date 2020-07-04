@@ -1,6 +1,6 @@
 ---
 - name: Install libonig.so.5()  
-  dnf: name=http://rpms.remirepo.net/enterprise/8/remi/x86_64//oniguruma-6.8.2-0.1.el8.remi.x86_64.rpm
+  dnf: name=https://rpmfind.net/linux/centos/8.2.2004/AppStream/x86_64/os/Packages/oniguruma-6.8.2-1.el8.x86_64.rpm
 
 - name: Install php-fpm and deps  
   dnf: name={{ item }} state=latest disablerepo=AppStream
