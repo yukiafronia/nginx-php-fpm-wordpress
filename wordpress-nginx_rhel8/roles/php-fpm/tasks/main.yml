@@ -1,9 +1,9 @@
 ---
 - name: Install libonig.so.5()  
-  # oniguruma5php-6.9.5
+  #oniguruma5php-6.9.5
   dnf: name=https://rpms.remirepo.net/enterprise/8/remi/x86_64/oniguruma5php-6.9.5+rev1-2.el8.remi.x86_64.rpm  
   
-  # oniguruma5php-devel-6.9.5
+  #oniguruma5php-devel-6.9.5
   #dnf: name=https://rpms.remirepo.net/enterprise/8/remi/x86_64/oniguruma5php-devel-6.9.5+rev1-2.el8.remi.x86_64.rpm
 
 - name: Install php-fpm and deps package first step  
