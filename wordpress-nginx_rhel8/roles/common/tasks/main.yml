@@ -1,4 +1,7 @@
 ---
+- name: Install VMware Tools
+  dnf: name=vm-open-tools state=latest
+
 - name: Copy the NGINX repository definition
   copy: src=nginx.repo dest=/etc/yum.repos.d/
 
