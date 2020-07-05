@@ -27,7 +27,7 @@
   service: name=firewalld state=started enabled=yes
 
 - name: Kernel Update Script
-  copy: src=startup.sh dest=/root/
+  copy: src=startup.sh dest=/root/　mode=0777
 
 - name: test script
-  copy: src=test.sh dest=/root/ mode=0777
+  copy: src=test.sh dest=/root/
