@@ -55,17 +55,26 @@ Successfully installed MarkupSafe-1.1.1 PyYAML-5.3.1 ansible-2.9.10 jinja2-2.11.
 `9.ansible-playbook -i hosts -u root --ask-pass site.yml`  
 
 ## 現在の進捗  
+2020/07/05 現在  
+MariaDB credential error 【Solved】  
 
-2019/09/28 現在
+依然として、  
+```bash
+fatal: [192.168.0.2]: FAILED! => {"changed": false, "msg": "unable to connect to database, check login_user and login_password are correct or /root/.my.cnf has the credentials. Exception message: (1698, \"Access denied for user 'root'@'localhost'\")"}
+```
 
-![CentOS8 (Ansible)-2019-09-28-19-46-20](https://user-images.githubusercontent.com/23439178/65815419-c2480580-e1de-11e9-86de-82f430ab072a.png)  
+というエラーログが発生するため、MariaDBのroot権限にパスワードを設けない形で create database とデータベースのアクセスユーザ、パスワード設定をcommand module利用によりワンライナーで実行することとする。  
 
-- MariaDBへのデータベース作成の際、MariaDBのログイン情報が渡されずデータベースの作成まで至らない。  
-- ansible側でplaybook実行の際、sshのパスワード認証の為sshpass.rpmが足りず怒られるので導入の際忘れずに。  
+これにより、Ansibleのcommand moduleを利用するため ***冪等性が担保できない。***
 
-※sshpass.rpmについて  (2020/07/04 現在)  
-MarkdownのREADMEにsshpass.rpmをdnf installでインストールするよう手順を加えました。  
-rpmでのインストールになるので出来る限りこまめにアップデートを行っていく予定です。
+2020/07/04 現在  
+MariaDB 10.4 -> 10.5 へのリポジトリアップデート  
+Wordpress 5.4.2 へのアップデート  
+READMEの記述内容変更  
+
+MariaDB credential error 発生  
+
+![image](https://user-images.githubusercontent.com/23439178/86516610-072f5580-be5d-11ea-9165-027c29ec2456.png)  
 
 2019/11/02 現在  
 MariaDB における create database とデータベースのアクセスユーザ、パスワード設定をcommand module利用によりワンライナーで完結させることに成功  
@@ -76,11 +85,14 @@ MariaDB における create database とデータベースのアクセスユー�
 mysql -u root -e SQL文 の構文がコマンドで通るはずだったのだが、文法が間違っていたため今まで実装することが出来なかった。  
 Ansibleでのmoduleでデータベースを作る方法は依然として資格情報が渡されないため、冪等性を確保できなくなってしまっているがcommand module でコマンド実施済みかどうかを判定出来るようにしていきたい（あくまで理想です 笑)  
 
-2020/07/04 現在  
-MariaDB 10.4 -> 10.5 へのリポジトリアップデート  
-Wordpress 5.4.2 へのアップデート  
-READMEの記述内容変更  
 
-MariaDB credential error 発生  
+2019/09/28 現在
 
-![image](https://user-images.githubusercontent.com/23439178/86516610-072f5580-be5d-11ea-9165-027c29ec2456.png)
+![CentOS8 (Ansible)-2019-09-28-19-46-20](https://user-images.githubusercontent.com/23439178/65815419-c2480580-e1de-11e9-86de-82f430ab072a.png)  
+
+- MariaDBへのデータベース作成の際、MariaDBのログイン情報が渡されずデータベースの作成まで至らない。  
+- ansible側でplaybook実行の際、sshのパスワード認証の為sshpass.rpmが足りず怒られるので導入の際忘れずに。  
+
+※sshpass.rpmについて  (2020/07/04 現在)  
+MarkdownのREADMEにsshpass.rpmをdnf installでインストールするよう手順を加えました。  
+rpmでのインストールになるので出来る限りこまめにアップデートを行っていく予定です。  
